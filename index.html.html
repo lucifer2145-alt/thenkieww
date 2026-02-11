@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>For meri ketchup rasmalai 💖</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    overflow: hidden;
+}
+
+h1 {
+    margin-top: 60px;
+    font-size: 45px;
+    color: white;
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff4d6d;
+}
+
+#name {
+    font-size: 60px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 20px;
+    text-shadow: 0 0 15px #ff0066, 0 0 30px #ff4d6d;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #ff1e56;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+button:hover {
+    background-color: #ff0040;
+}
+
+.heart {
+    position: absolute;
+    font-size: 25px;
+    animation: fall linear infinite;
+}
+
+.confetti {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
+</style>
+
+<script>
+function showLove() {
+    alert("Are you smiling right now? 😏💕");
+    alert("Because someone is completely obsessed with you ❤️");
+    alert("And maybe that someone is me... 😌✨");
+}
+
+// Typing Animation
+let nameText = "meri ketchup rasmalai";
+let index = 0;
+function typeEffect() {
+    if(index < nameText.length) {
+        document.getElementById("name").innerHTML += nameText.charAt(index);
+        index++;
+        setTimeout(typeEffect, 150);
+    }
+}
+
+window.onload = function() {
+    typeEffect();
+
+    // Heart Rain
+    setInterval(() => {
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }, 300);
+};
+
+// Confetti on click
+document.addEventListener("click", function() {
+    for(let i = 0; i < 60; i++) {
+        let conf = document.createElement("div");
+        conf.className = "confetti";
+        conf.style.left = Math.random() * 100 + "vw";
+        conf.style.backgroundColor = 
+            "hsl(" + Math.random()*360 + ", 100%, 50%)";
+        conf.style.animationDuration = (2 + Math.random() * 3) + "s";
+        document.body.appendChild(conf);
+
+        setTimeout(() => {
+            conf.remove();
+        }, 5000);
+    }
+});
+</script>
+
+</head>
+
+<body>
+
+<!-- Background Music -->
+<iframe width="0" height="0" 
+src="https://www.youtube.com/embed/0u7HNK2FJLA?autoplay=1&loop=1&playlist=0u7HNK2FJLA"
+frameborder="0" 
+allow="autoplay">
+</iframe>
+
+<h1>Thank you for the wish meri kuchu puchu ketchup raasmalai 💕</h1>
+
+<div id="name"></div>
+
+<button onclick="showLove()">Click Me Cutie 😘</button>
+
+</body>
+</html>
